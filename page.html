@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <title>Week 2 React Import External JSON</title>
+    <!-- load jquery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- load babel-->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <!--root element-->
+    <div id="myApp"></div>
+    <!--custom script w/ react component-->
+    <script data-type="module" data-presets="react" type="text/babel">
+        "use strict";
+
+        //load react as a js module
+        import React from 'https://cdn.jsdelivr.net/npm/react@19.1.1/+esm';
+        //load createRoot method from ReactDOM/client
+        import {createRoot} from 'https://cdn.jsdelivr.net/npm/react-dom@19.1.1/client/+esm';
+   
+        //define a react page component
+        function ProjectList(props) {
+            //return some output for the component using JSX
+            return <div>
+                        <ol>
+                          {
+                            // use map() too loop thru array passed in props
+                            props.list.map(
+                                //copy current array value into item and pass to arrow function
+                                (item,index) => (
+                                    <li key={index}>
+                                        <a href={item.link}>
+                                            {item.firstname}
+                                        </a>
+                                    </li>
+                                )
+                            )
+                          }  
+                        </ol>
+                    </div>;
+        }
+   
+        //use jquery to load json
+        $.getJSON(
+            "anything",
+            function(jsonFromJquery) {
+                //after JSON loaded
+                console.log(jsonFromJquery);
+                //fire up React and build our app
+                //find html element
+                const myElement = document.getElementById('myApp');
+                //reactDOM createRoot() to identify root HTML elemt for app
+                const myRoot = createRoot(myElement);
+                //then call react render() to output component into existing element
+                myRoot.render(
+                    <ProjectList list={jsonFromJquery} />
+                );
+            }
+        );
+   </script>
+</body>
+</html>

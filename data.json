@@ -1,0 +1,17 @@
+[
+    {
+    "firstname":"luke",
+    "link":"https://starwars.fandom.com/wiki/Luke_Skywalker"
+    },
+
+    {
+    "firstname":"leia",
+    "link":"https://starwars.fandom.com/wiki/Leia_Skywalker_Organa_Solo"
+    },
+
+    {
+    "firstname":"han",
+    "link":"https://starwars.fandom.com/wiki/Han_Solo"
+    }
+]
+
