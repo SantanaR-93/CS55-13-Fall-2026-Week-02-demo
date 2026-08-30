@@ -12,16 +12,16 @@ const requestListener =  function( myrequest, myresponse ) {
 
         let mytext;
         if (myrequest.url === '/') {
-            fs.readFile(__dirname + "/page.html").then(
+            fs.readFile(__dirname + "/mypage.html").then(
                 contents => {
                     myresponse.setHeader("Content-Type", "text/html; charset=UTF-8");
                     myresponse.writeHead(200);
-                    myresponse.end(contents);
+                    myresponse.end(contents); 
                 }
             )
         } else {
             //if request url not root, return to json file
-            fs.readFile(__dirname + "/data.json").then(
+            fs.readFile(__dirname + "/sw_lore.json").then(
                 contents => {
                     myresponse.setHeader("Content-Type", "application/json; charset=UTF-8");
                     myresponse.writeHead(200);
