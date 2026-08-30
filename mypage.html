@@ -8,7 +8,7 @@
 </head>
 <body>
     <!--root element-->
-    <div id="myApp"></div>
+    <div id="swApp"></div>
     <!--custom script w/ react component-->
     <script data-type="module" data-presets="react" type="text/babel">
         "use strict";
@@ -48,7 +48,7 @@
                 console.log(jsonFromJquery);
                 //fire up React and build our app
                 //find html element
-                const myElement = document.getElementById('myApp');
+                const myElement = document.getElementById('swApp');
                 //reactDOM createRoot() to identify root HTML elemt for app
                 const myRoot = createRoot(myElement);
                 //then call react render() to output component into existing element
