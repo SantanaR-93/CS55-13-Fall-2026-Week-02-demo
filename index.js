@@ -1,7 +1,7 @@
 // CS55.13-Fall-2026-Week-02
 
 //use http package (shared code) from node.js
-const myhttp = require('http');
+const myhttp = require("http");
 
 //load the core node filesystem (fs) module, using js promises instead of callbacks
 const fs = require("fs").promises;
@@ -10,7 +10,6 @@ const fs = require("fs").promises;
 const requestListener =  function( myrequest, myresponse ) {
         console.log( myrequest.url );
 
-        let mytext;
         if (myrequest.url === '/') {
             fs.readFile(__dirname + "/mypage.html").then(
                 contents => {
@@ -18,7 +17,7 @@ const requestListener =  function( myrequest, myresponse ) {
                     myresponse.writeHead(200);
                     myresponse.end(contents); 
                 }
-            )
+            );
         } else {
             //if request url not root, return to json file
             fs.readFile(__dirname + "/sw_lore.json").then(
