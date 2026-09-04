@@ -5,6 +5,16 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- load babel-->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="importmap">
+            {
+              "imports": {
+                "react": "https://esm.sh/react@latest",
+                "react-dom/client": "https://esm.sh/react-dom@latest/client",
+                "react/jsx-runtime": "https://esm.sh/react@latest/jsx-runtime"
+              }
+            }
+        </script>
 </head>
 <body>
     <!--root element-->
